@@ -20,7 +20,10 @@ namespace NoviKunst
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+            // Hier runt de middleware. De volgorde van de methodes doet er toe (pipeline)!
+            // Middle ware runt code adhv de requests
         {
+            app.UseDefaultFiles(); // zoekt naar index.html en pass het naar UseStaticFiles
             app.UseStaticFiles(); // add the service to show static files
         }
     }
